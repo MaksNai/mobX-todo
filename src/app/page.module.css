@@ -6,14 +6,15 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
   min-height: 100svh;
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
+  background-color: #fff; /* Для светлой темы */
+  color: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +25,9 @@
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
+
+    background-color: #121212; /* Темная тема */
+    color: #f0f0f0;
   }
 }
 
@@ -31,7 +35,6 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  grid-row-start: 2;
 }
 
 .main ol {
@@ -162,4 +165,131 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navTask {
+  margin-bottom: 20px;
+}
+
+.navHeader {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: inherit; /* Поддержка светлой и темной тем */
+}
+
+.inputTask {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .inputTask {
+    background-color: #1f1f1f; /* Темная тема */
+    color: #f0f0f0;
+    border-color: #444;
+  }
+}
+
+.buttonAddTask {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttonAddTask:hover {
+  background-color: #218838;
+}
+
+.taskList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .taskItem {
+    background-color: #1f1f1f; /* Темная тема */
+    border-color: #444;
+  }
+}
+
+.taskItem.important {
+  background-color: #ffeeba;
+}
+
+@media (prefers-color-scheme: dark) {
+  .taskItem.important {
+    background-color: #523515;
+  }
+}
+
+.taskText {
+  flex: 1;
+  font-size: 1.1rem;
+  color: inherit;
+}
+
+.taskText.completed {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.taskActions {
+  display: flex;
+  gap: 10px;
+}
+
+.actionButton {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.actionButton:hover {
+  background-color: #0056b3;
+}
+
+.deleteButton {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #dc3545;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
 }
